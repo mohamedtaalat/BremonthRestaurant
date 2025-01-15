@@ -1,4 +1,4 @@
-package com.example.bremonthrestaurant.user.home
+package com.example.bremonthrestaurant.admin.accessAdmin
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
@@ -10,23 +10,11 @@ import com.example.bremonthrestaurant.menuData.MenuRepo
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class HomeViewModel(private val repo: MenuRepo):ViewModel() {
-    val itemLiveData:MutableLiveData<MenuData>by lazy {
-        MutableLiveData<MenuData>()
-    }
+class HomeAdminViewModel(private val repo: MenuRepo):ViewModel() {
     val itemsLiveData:MutableLiveData<List<MenuData>>by lazy {
         MutableLiveData<List<MenuData>>()
     }
-    suspend fun selectItem(id:Int){
-        viewModelScope.launch(Dispatchers.IO) {
-            try {
-                itemLiveData.postValue(repo.selectItem(id))
-            }catch (ex:Exception){
-                Log.d("Eror", ex.message.toString())
-            }
-        }
-    }
-     fun selectAllItems(){
+    fun getAllItems(){
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 itemsLiveData.postValue(repo.selectAllItem())
@@ -35,11 +23,29 @@ class HomeViewModel(private val repo: MenuRepo):ViewModel() {
             }
         }
     }
+    fun deleteItem(id:Int){
+        viewModelScope.launch(Dispatchers.IO) {
+            try {
+                repo.deleteItem(id)
+            }catch (ex:Exception){
+                Log.d("Eror", ex.message.toString())
+            }
+        }
+    }
+    fun addItem(menuData: MenuData){
+        viewModelScope.launch(Dispatchers.IO) {
+            try {
+                repo.addItem(menuData)
+            }catch (ex:Exception){
+                Log.d("Eror", ex.message.toString())
+            }
+        }
+    }
 }
-class HomeViewModelFactory(
+class HomeAdminViewModelFactory(
     private val repo: MenuRepo
 ): ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        return HomeViewModel(repo) as T
+        return HomeAdminViewModel(repo) as T
     }
 }

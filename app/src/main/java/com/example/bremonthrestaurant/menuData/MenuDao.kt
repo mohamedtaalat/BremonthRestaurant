@@ -1,4 +1,4 @@
-package com.example.bremonthrestaurant.restaurantData
+package com.example.bremonthrestaurant.menuData
 
 import androidx.room.Dao
 import androidx.room.Insert
@@ -12,4 +12,6 @@ interface MenuDao {
     fun selectItem(id:Int):MenuData
     @Query("select * from dataMenu")
     fun selectAllItems():List<MenuData>
+    @Query("delete  from dataMenu where id=:id")
+    fun deleteItem(id: Int)
 }

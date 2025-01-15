@@ -1,4 +1,4 @@
-package com.example.bremonthrestaurant.restaurantData
+package com.example.bremonthrestaurant.menuData
 
 import android.content.Context
 import androidx.room.Database

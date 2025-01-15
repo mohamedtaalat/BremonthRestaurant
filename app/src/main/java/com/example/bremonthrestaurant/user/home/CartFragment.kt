@@ -11,9 +11,9 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.bremonthrestaurant.R
 import com.example.bremonthrestaurant.databinding.FragmentCartBinding
-import com.example.bremonthrestaurant.restaurantData.MenuData
-import com.example.bremonthrestaurant.restaurantData.MenuDatabase
-import com.example.bremonthrestaurant.restaurantData.MenuRepo
+import com.example.bremonthrestaurant.menuData.MenuData
+import com.example.bremonthrestaurant.menuData.MenuDatabase
+import com.example.bremonthrestaurant.menuData.MenuRepo
 import com.example.bremonthrestaurant.user.recyclerViewUser.RecyclerViewAdapterUser
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

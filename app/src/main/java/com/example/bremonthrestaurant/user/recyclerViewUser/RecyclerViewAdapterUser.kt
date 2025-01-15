@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.core.net.toUri
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bremonthrestaurant.R
-import com.example.bremonthrestaurant.restaurantData.MenuData
+import com.example.bremonthrestaurant.menuData.MenuData
 
 class RecyclerViewAdapterUser(
     private var items:List<MenuData>,

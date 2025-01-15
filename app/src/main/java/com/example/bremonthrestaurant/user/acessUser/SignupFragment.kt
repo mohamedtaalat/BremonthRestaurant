@@ -67,12 +67,12 @@ class SignupFragment : Fragment() {
                             )
                             lifecycleScope.launch(Dispatchers.IO) {
                                 viewModel.addUser(user)
-                                Toast.makeText(requireContext(), "Succesful", Toast.LENGTH_SHORT)
-                                    .show()
-                                val bundle=Bundle()
-                                bundle.putString("email",binding.emailSignUser.text.toString())
-                                findNavController().navigate(R.id.action_signupFragment_to_homeFragment,bundle)
                             }
+                            Toast.makeText(requireContext(), "Succesful", Toast.LENGTH_SHORT)
+                                .show()
+                            val bundle=Bundle()
+                            bundle.putString("email",binding.emailSignUser.text.toString())
+                            findNavController().navigate(R.id.action_signupFragment_to_homeFragment,bundle)
 
                         } else {
                             val user = User(

@@ -1,4 +1,4 @@
-package com.example.bremonthrestaurant.restaurantData
+package com.example.bremonthrestaurant.menuData
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

@@ -8,10 +8,9 @@ import android.view.ViewGroup
 import androidx.core.net.toUri
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import com.example.bremonthrestaurant.R
 import com.example.bremonthrestaurant.databinding.FragmentDisplayItemBinding
-import com.example.bremonthrestaurant.restaurantData.MenuDatabase
-import com.example.bremonthrestaurant.restaurantData.MenuRepo
+import com.example.bremonthrestaurant.menuData.MenuDatabase
+import com.example.bremonthrestaurant.menuData.MenuRepo
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

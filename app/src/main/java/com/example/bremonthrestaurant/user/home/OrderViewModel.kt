@@ -8,7 +8,6 @@ import androidx.lifecycle.viewModelScope
 import com.example.bremonthrestaurant.orderData.Order
 import com.example.bremonthrestaurant.orderData.OrderRepo
 import com.example.bremonthrestaurant.orderData.OrderState
-import com.example.bremonthrestaurant.restaurantData.MenuRepo
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

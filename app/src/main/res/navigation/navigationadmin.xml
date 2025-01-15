@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/navigationadmin">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigationadmin"
+    app:startDestination="@id/loginAdminFragment">
 
+    <fragment
+        android:id="@+id/loginAdminFragment"
+        android:name="com.example.bremonthrestaurant.admin.accessAdmin.LoginAdminFragment"
+        android:label="fragment_login_admin"
+        tools:layout="@layout/fragment_login_admin" >
+        <action
+            android:id="@+id/action_loginAdminFragment_to_homeAdminFragment"
+            app:destination="@id/homeAdminFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeAdminFragment"
+        android:name="com.example.bremonthrestaurant.admin.accessAdmin.HomeAdminFragment"
+        android:label="fragment_home_admin"
+        tools:layout="@layout/fragment_home_admin" >
+        <action
+            android:id="@+id/action_homeAdminFragment_to_loginAdminFragment"
+            app:destination="@id/loginAdminFragment" />
+        <action
+            android:id="@+id/action_homeAdminFragment_to_addItemFragment"
+            app:destination="@id/addItemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addItemFragment"
+        android:name="com.example.bremonthrestaurant.admin.accessAdmin.AddItemFragment"
+        android:label="fragment_add_item"
+        tools:layout="@layout/fragment_add_item" >
+        <action
+            android:id="@+id/action_addItemFragment_to_homeAdminFragment"
+            app:destination="@id/homeAdminFragment" />
+    </fragment>
 </navigation>

@@ -15,9 +15,9 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.bremonthrestaurant.R
 import com.example.bremonthrestaurant.databinding.FragmentHomeBinding
-import com.example.bremonthrestaurant.restaurantData.MenuData
-import com.example.bremonthrestaurant.restaurantData.MenuDatabase
-import com.example.bremonthrestaurant.restaurantData.MenuRepo
+import com.example.bremonthrestaurant.menuData.MenuData
+import com.example.bremonthrestaurant.menuData.MenuDatabase
+import com.example.bremonthrestaurant.menuData.MenuRepo
 import com.example.bremonthrestaurant.user.recyclerViewUser.RecyclerViewAdapterUser
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -56,9 +56,7 @@ class HomeFragment : Fragment() {
                 }
             }
         }
-        lifecycleScope.launch(Dispatchers.IO) {
-            viewModel.selectAllItems()
-        }
+        viewModel.selectAllItems()
         viewModel.itemsLiveData.observe(viewLifecycleOwner){
             items=it
             adapterUser.setContent(items)
